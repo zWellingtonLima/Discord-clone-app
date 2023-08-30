@@ -3,7 +3,7 @@ import { UserButton } from "@clerk/nextjs";
 
 const Home = () => {
   return (
-    <div className="flex justify-between">
+    <div>
       <UserButton afterSignOutUrl="/" />
       <ModeToggle />
     </div>
