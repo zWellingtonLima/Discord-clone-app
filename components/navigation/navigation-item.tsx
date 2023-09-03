@@ -18,8 +18,8 @@ const NavigationItem: FC<NavigationItemProps> = ({ id, imageUrl, name }) => {
   const router = useRouter();
 
   const onClick = () => {
-    router.push(`/servers/${id}`)
-  }
+    router.push(`/servers/${id}`);
+  };
 
   return (
     <ActionTooltip side="right" label={name} align="center">
