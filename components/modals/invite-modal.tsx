@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useState } from "react";
 import { Check, Copy, RefreshCw } from "lucide-react";
 
@@ -14,7 +15,6 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useOrigin } from "@/hooks/use-origin";
-import axios from "axios";
 
 export const InviteModal = () => {
   const { onOpen, isOpen, onClose, type, data } = useModal();
