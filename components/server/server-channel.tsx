@@ -51,7 +51,7 @@ export const ServerChannel = ({
           <ActionTooltip label="Edit">
             <Edit className="hidden group-hover:block text-zinc-500 w-4 h-4 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300 transition" />
           </ActionTooltip>
-          <ActionTooltip label="Edit">
+          <ActionTooltip label="Delete">
             <Trash className="hidden group-hover:block text-zinc-500 w-4 h-4 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300 transition" />
           </ActionTooltip>
         </div>
