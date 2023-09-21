@@ -12,7 +12,7 @@ interface ChannelIdPageProps {
   };
 }
 
-const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
+export const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
   const profile = await currentProfile();
 
   if (!profile) {
@@ -46,5 +46,3 @@ const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
     </div>
   );
 };
-
-export default ChannelIdPage;
