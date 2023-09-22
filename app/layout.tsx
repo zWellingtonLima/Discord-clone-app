@@ -30,10 +30,10 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="discord-theme"
           >
-            {/* <SocketProvider> */}
+            <SocketProvider>
               <ModalProvider />
               {children}
-            {/* </SocketProvider> */}
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>

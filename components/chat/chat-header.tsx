@@ -18,7 +18,7 @@ export const ChatHeader = ({
   imageUrl,
 }: ChatHeaderProps) => {
   return (
-    <div className="text-muted font-semibold px-3 flex items-center h-1/2 border-neutral-200 dark:border-neutral-800 border-b-2">
+    <div className="text-muted font-semibold px-3 flex items-center h-12 border-neutral-200 dark:border-neutral-800 border-b-2">
       <MobileToggle serverId={serverId} />
       {type === "channel" && (
         <Hash className="w-5 h-5 text-zinc-500 dark:text-zinc-400 mr-2" />
@@ -28,7 +28,7 @@ export const ChatHeader = ({
       )}
       <p className="font-semibold text-md text-black dark:text-white">{name}</p>
       <div className='ml-auto flex items-center'>
-        {/* <SocketIndicator /> */}
+        <SocketIndicator />
       </div>
     </div>
   );

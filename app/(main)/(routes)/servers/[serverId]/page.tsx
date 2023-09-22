@@ -44,7 +44,7 @@ const ServerIdPage = async ({ params }: ServerIdPageProps) => {
     return null;
   } // This should never happens but just in case returns null.
 
-  return redirect(`/server/${params.serverId}/channels/${initialChannel?.id}`);
+  return redirect(`/servers/${params.serverId}/channels/${initialChannel?.id}`);
 };
 
 export default ServerIdPage;
