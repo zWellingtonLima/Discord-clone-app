@@ -5,6 +5,8 @@ import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { getOrCreateConversation } from "@/lib/conversation";
 import { ChatHeader } from "@/components/chat/chat-header";
+import { ChatMessages } from "@/components/chat/chat-messages";
+import { ChatInput } from "@/components/chat/chat-input";
 
 interface MemberIdPageProps {
   params: {
@@ -47,7 +49,7 @@ const MemberIdPage = async ({ params }: MemberIdPageProps) => {
 
   const otherMember =
     memberOne.profileId === profile.id ? memberTwo : memberOne; // This const compares both memberOne with memberTwo, we're looking at profileId and if it matches our currentProfileId we're picking oposite member bcs I wanna get the otherMember. I don't kdnow if we have initiated the conversation or not.
-
+ 
   return (
     <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
       <ChatHeader 
@@ -56,6 +58,27 @@ const MemberIdPage = async ({ params }: MemberIdPageProps) => {
         serverId={params.serverId}
         type="conversation"
         />
+      <ChatMessages 
+        member={currentMember}
+        name={otherMember.profile.name}
+        chatId={conversation.id}
+        type="conversation"
+        apiUrl="/api/direct=messages"
+        paramKey="conversationId"
+        paramValue={conversation.id}
+        socketUrl="/api/socket/direct-messages"
+        socketQuery={{
+          conversationId: conversation.id
+        }}
+      />
+      <ChatInput 
+        name={otherMember.profile.name}
+        type="conversation"
+        apiUrl="/api/socket/direct-messages"
+        query={{
+          conversationId: conversation.id
+        }}
+      />
     </div>
   );
 };
