@@ -96,7 +96,7 @@ export const ChatItem = ({
 
   const isLoading = form.formState.isSubmitting;
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async ( values: z.infer<typeof formSchema>) => {
     try {
       const url = qs.stringifyUrl({
         url: `${socketUrl}/${id}`,
@@ -116,7 +116,7 @@ export const ChatItem = ({
 
   const isAdmin = currentMember.role === MemberRole.ADMIN;
   const isModerator = currentMember.role === MemberRole.MODERATOR;
-  const isOwner = currentMember.role === member.id;
+  const isOwner = currentMember.id === member.id;
   const canDeleteMessage = !deleted && (isAdmin || isModerator || isOwner);
   const canEditMessage = !deleted && isOwner && !fileUrl;
   const isPDF = fileType === "pdf" && fileUrl;
@@ -179,7 +179,7 @@ export const ChatItem = ({
           {!fileUrl && !isEditing && (
             <p
               className={cn(
-                "text-sm text-zinc-600 dark:to-zinc-300",
+                "text-sm text-zinc-600 dark:text-zinc-300",
                 deleted &&
                   "italic text-zinc-500 dark:text-zinc-400 text-sm mt-1"
               )}
@@ -196,7 +196,7 @@ export const ChatItem = ({
             <Form {...form}>
               <form
                 className="flex items-center w-full gap-x-2 pt-2"
-                onSubmit={() => form.handleSubmit(onSubmit)}
+                onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField
                   control={form.control}
