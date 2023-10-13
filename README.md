@@ -1,8 +1,8 @@
 # Discord Clone using Next.js 13, React, Socket io, Prisma, Tailwind, MySQL
 
-### <a src="https://discord-clone-app.up.railway.app/"> Link to deployment</a>
+### <a href="https://discord-clone-app.up.railway.app/"> Link to deployment</a>
 ---
-This is a repository created from a tutorial by `Antonio Erdeljac` : <a src="https://github.com/AntonioErdeljac/next13-discord-clone#readme">repository</a>.
+This is a repository created from a tutorial by `Antonio Erdeljac` : <a href="https://github.com/AntonioErdeljac/next13-discord-clone#readme">repository</a>.
 
 Features:
 
