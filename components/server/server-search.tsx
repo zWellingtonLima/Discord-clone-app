@@ -89,7 +89,7 @@ export const ServerSearch = ({ data }: ServerSearchProps) => {
                   return (
                     <CommandItem
                       key={id}
-                      onSubmit={() => onClick({ id, type })}
+                      onSelect={() => onClick({ id, type })}
                     >
                       {icon}
                       <span>{name}</span>
